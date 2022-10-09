@@ -126,6 +126,15 @@ alias mk="mkdir"
 alias zcc="vim ~/.zshrc"
 alias vcc="vim ~/.vimrc"
 
+alias cnpm="npm --registry=https://registry.npmmirror.com \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npmmirror.com/mirrors/node \
+--userconfig=$HOME/.cnpmrc"
+alias ci="cnpm install"
+alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
+--cache=$HOME/.pnpm/.cache/cpnpm"
+alias pi="cpnpm install"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
