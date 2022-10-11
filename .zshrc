@@ -115,13 +115,18 @@ source $ZSH/oh-my-zsh.sh
 
 ### ALIAS
 alias fq="cd ~/clash && sudo ./clash -d ."
+alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 
-alias zi="sudo zypper install"
-alias zu="sudo zypper update"
-alias zs="zypper search"
+alias ai="sudo apt install"
+alias ay="sudo apt install -y"
+alias au="sudo apt update"
+alias ag="sudo apt upgrade"
+alias as="apt search"
 
 alias vi="vim"
 alias mk="mkdir"
+alias rb="shutdown -r now"
+alias po="shutdown now"
 
 alias zcc="vim ~/.zshrc"
 alias vcc="vim ~/.vimrc"
@@ -135,6 +140,11 @@ alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
 --cache=$HOME/.pnpm/.cache/cpnpm"
 alias pi="cpnpm install"
 
+alias gu="google-chrome &"
+alias c="code"
+alias e="nautilus &"
+
+### NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
