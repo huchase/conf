@@ -140,6 +140,8 @@ alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
 --cache=$HOME/.pnpm/.cache/cpnpm"
 alias pi="cpnpm install"
 
+alias gh="git remote set-url origin git@github.com:huchase/"
+
 alias gu="google-chrome &"
 alias c="code"
 alias e="nautilus &"
