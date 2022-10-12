@@ -159,6 +159,30 @@ alias gu="google-chrome &"
 alias c="code"
 alias e="nautilus &"
 
+### TMUX
+# https://www.ruanyifeng.com/blog/2019/10/tmux.html
+tmux_new(){
+  if [ ! $1 ];then
+    tmux;
+  else
+    tmux new -s $1;
+  fi
+}
+alias tn="tmux_new"
+alias td="tmux detach"
+alias te="exit"
+alias ta="tmux attach -t"
+alias tk="tmux kill-session -t"
+alias tl="tmux ls"
+
+alias tg="tmux split-window -h"
+alias tgg="tmux split-window"
+alias U="tmux select-pane -U"
+alias D="tmux select-pane -D"
+alias L="tmux select-pane -L"
+alias R="tmux select-pane -R"
+
+
 ### NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
