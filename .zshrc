@@ -135,6 +135,7 @@ alias po="shutdown now"
 
 alias zcc="vim ~/.zshrc"
 alias vcc="vim ~/.vimrc"
+alias tcc="vim ~/.tmux.conf"
 
 alias cnpm="npm --registry=https://registry.npmmirror.com \
 --cache=$HOME/.npm/.cache/cnpm \
@@ -174,7 +175,7 @@ alias te="exit"
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tl="tmux ls"
-
+alias tw="tmux new-window"
 alias tg="tmux split-window -h"
 alias tgg="tmux split-window"
 alias U="tmux select-pane -U"
