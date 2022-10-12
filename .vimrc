@@ -8,7 +8,7 @@ set expandtab
 
 set listchars=tab:>-,trail:~
 set list
-colorscheme desert
+"colorscheme desert
 
 " base
 set nocompatible
@@ -26,11 +26,18 @@ set undodir=~/.vim/undo// " you must run mkdir first, can't do it by itself
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
 set wildmenu " very useful
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
+Plug 'crusoexia/vim-monokai'
+Plug 'Yggdroot/indentLine'
+Plug 'neoclide/coc.nvim',{'branch':'release'}
 call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 set laststatus=2
+colo monokai
+let g:indent_guides_guide_size=2
+let g:indent_guides_start_level=2

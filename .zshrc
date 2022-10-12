@@ -122,6 +122,11 @@ alias ay="sudo apt install -y"
 alias au="sudo apt update"
 alias ag="sudo apt upgrade"
 alias as="apt search"
+remove_and_autoremove(){
+  sudo apt remove $1;
+  sudo apt autoremove;
+}
+alias am="remove_and_autoremove"
 
 alias vi="vim"
 alias mk="mkdir"
