@@ -5,10 +5,10 @@ sudo apt update
 sudo apt upgrade
 
 ### base
-sudo apt install -y git wget curl gcc make
+sudo apt install -y git gcc make
 
 ### sh
-sudo apt install -y tmux zsh neofetch
+sudo apt install -y tmux zsh neofetch wget curl openssh-server sshpass
 
 ### gnome
 sudo apt install -y gnome-tweaks

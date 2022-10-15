@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 ### ALIAS
-alias fq="cd ~/clash && sudo ./clash -d ."
+alias fq="cd ~/clash && sudo ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 
 alias ai="sudo apt install"
@@ -186,10 +186,32 @@ alias D="tmux select-pane -D"
 alias L="tmux select-pane -L"
 alias R="tmux select-pane -R"
 
+### Docker
+alias dl="docker images"
+alias dp="docker ps"
+alias dpa="docker ps -a"
+alias drc="docker rm"
+alias dri="docker rmi"
+alias dru="docker run"
+alias ds="docker stop"
+alias dpu="docker pull"
 
 ### Do It First
-
-
+### Proxy
+proxy_on() {
+  export all_proxy=socks://127.0.0.1:7891/
+  export http_proxy=http://127.0.0.1:7890/
+  export no_proxy=localhost,127.0.0.0/8,::1
+  export https_proxy=http://127.0.0.1:7890/
+}
+proxy_off() {
+  unset all_proxy
+  unset http_proxy
+  unset https_proxy
+  unset no_proxy
+}
+alias on="proxy_on"
+alias off="proxy_off"
 
 ### NVM
 export NVM_DIR="$HOME/.nvm"
