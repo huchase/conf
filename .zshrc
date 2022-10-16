@@ -114,8 +114,9 @@ source $ZSH/oh-my-zsh.sh
 
 
 ### ALIAS
-alias fq="cd ~/clash && sudo ./clash -d . && echo OVER"
+alias cla="cd ~/clash && sudo ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
+alias tp='typora'
 
 alias ai="sudo apt install"
 alias ay="sudo apt install -y"
@@ -140,14 +141,17 @@ alias zcc="vim ~/.zshrc"
 alias vcc="vim ~/.vimrc"
 alias tcc="vim ~/.tmux.conf"
 
-alias cnpm="npm --registry=https://registry.npmmirror.com \
---cache=$HOME/.npm/.cache/cnpm \
---disturl=https://npmmirror.com/mirrors/node \
---userconfig=$HOME/.cnpmrc"
-alias ci="cnpm install"
-alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
---cache=$HOME/.pnpm/.cache/cpnpm"
-alias pi="cpnpm install"
+#alias cnpm="npm --registry=https://registry.npmmirror.com \
+#--cache=$HOME/.npm/.cache/cnpm \
+#--disturl=https://npmmirror.com/mirrors/node \
+#--userconfig=$HOME/.cnpmrc"
+#alias ci="cnpm install"
+#alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
+#--cache=$HOME/.pnpm/.cache/cpnpm"
+#alias pi="cpnpm install"
+
+#alias ni="npm install"
+#alias pi="pnpm install"
 
 github_remote() {
   git remote set-url origin git@github.com:huchase/$1.git;
@@ -198,20 +202,26 @@ alias dpu="docker pull"
 
 ### Do It First
 ### Proxy
+
 proxy_on() {
   export all_proxy=socks://127.0.0.1:7891/
   export http_proxy=http://127.0.0.1:7890/
   export no_proxy=localhost,127.0.0.0/8,::1
   export https_proxy=http://127.0.0.1:7890/
+  gsettings set org.gnome.system.proxy mode 'manual';
 }
+
 proxy_off() {
   unset all_proxy
   unset http_proxy
   unset https_proxy
   unset no_proxy
+  gsettings set org.gnome.system.proxy mode 'none';
 }
+
 alias on="proxy_on"
 alias off="proxy_off"
+alias fq="on && cla && off"
 
 ### NVM
 export NVM_DIR="$HOME/.nvm"
