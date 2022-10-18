@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 ### ALIAS
-alias cla="cd ~/clash && sudo ./clash -d . && echo OVER"
+alias cla="cd ~/clash && cat ~/.pwd | sudo -S ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 alias tp='~/apps/typora/Typora'
 alias ai="cat ~/.pwd | sudo -S apt install"
