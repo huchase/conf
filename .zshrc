@@ -117,11 +117,10 @@ source $ZSH/oh-my-zsh.sh
 alias cla="cd ~/clash && sudo ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 alias tp='~/apps/typora/Typora'
-
-alias ai="sudo apt install"
-alias ay="sudo apt install -y"
-alias au="sudo apt update"
-alias ag="sudo apt upgrade"
+alias ai="cat ~/.pwd | sudo -S apt install"
+alias ay="cat ~/.pwd | sudo -S apt install -y"
+alias au="cat ~/.pwd | sudo -S apt update"
+alias ag="cat ~/.pwd | sudo -S apt upgrade"
 alias as="apt search"
 remove_and_autoremove(){
   sudo apt remove $1;
@@ -166,6 +165,7 @@ alias gc='github_clone_self'
 alias gu="google-chrome &"
 alias c="code"
 alias e="nautilus &"
+alias th="touch"
 
 ### TMUX
 # https://www.ruanyifeng.com/blog/2019/10/tmux.html
