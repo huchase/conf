@@ -127,10 +127,12 @@ alias uz="unzip"
 alias py="python3"
 alias rm="rimraf"
 alias th="touch"
+alias ls="ls -F --color=auto"
 
 
 ## alias-bin
-alias cla="cd ~/clash && cat ~/.pwd | sudo -S ./clash -d . && echo OVER"
+export CLASH="~/clash"
+alias cla="cd $CLASH && cat ~/.pwd | sudo -S ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 alias tp='~/apps/typora/Typora'
 
