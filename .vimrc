@@ -37,7 +37,19 @@ Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim',{'branch':'release'}
 call plug#end()
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
+autocmd vimenter * if !argc()|NERDTree|endif
+let g:NERDTreeWinSize=20
 set laststatus=2
 colo monokai
-let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
+
+
+
+" remaping
+imap jk <Esc>
+nnoremap tn :tabnew<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tc :tabclose<CR>
+nnoremap sa :wq<CR>

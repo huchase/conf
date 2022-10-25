@@ -15,7 +15,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -114,13 +113,51 @@ source $ZSH/oh-my-zsh.sh
 
 
 ### ALIAS
+
+
+## alias-base
+alias vi="vim"
+alias mk="mkdir"
+alias rb="shutdown -r now"
+alias po="shutdown now"
+alias su="sudo su"
+alias cl="clear"
+alias tz="tar zxvf"
+alias uz="unzip"
+alias py="python3"
+alias rm="rimraf"
+alias th="touch"
+
+
+## alias-bin
 alias cla="cd ~/clash && cat ~/.pwd | sudo -S ./clash -d . && echo OVER"
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 alias tp='~/apps/typora/Typora'
-alias ai="cat ~/.pwd | sudo -S apt install"
+
+
+## alias-application
+alias gu="google-chrome &"
+alias c="code"
+alias e="nautilus &"
+aria2_download() {
+  aria2c -d ~/downloads "$1"
+}
+alias ari="aria2_download"
+
+
+## alias-dotfile
+alias zcc="vim ~/.zshrc"
+alias vcc="vim ~/.vimrc"
+alias tcc="vim ~/.tmux.conf"
+
+
+## alias-apt
+#alias ai="cat ~/.pwd | sudo -S apt install"
+alias ai="sudo apt install"
 alias ay="cat ~/.pwd | sudo -S apt install -y"
 alias au="cat ~/.pwd | sudo -S apt update -y"
-alias ag="cat ~/.pwd | sudo -S apt upgrade -y"
+#alias ag="cat ~/.pwd | sudo -S apt upgrade -y"
+alias ag-"sudo apt upgrade"
 alias as="apt search"
 remove_and_autoremove(){
   sudo apt remove $1;
@@ -128,25 +165,8 @@ remove_and_autoremove(){
 }
 alias am="remove_and_autoremove"
 
-alias vi="vim"
-alias mk="mkdir"
-alias rb="shutdown -r now"
-alias po="shutdown now"
-alias su="sudo su"
-alias tz="tar zxvf"
-alias cl="clear"
-alias uz="unzip"
-alias py="python3"
-alias rm="rimraf"
 
-alias zcc="vim ~/.zshrc"
-alias vcc="vim ~/.vimrc"
-alias tcc="vim ~/.tmux.conf"
-
-aria2_download() {
-  aria2c -d ~/downloads "$1"
-}
-alias ari="aria2_download"
+## alias-npm
 #alias cnpm="npm --registry=https://registry.npmmirror.com \
 #--cache=$HOME/.npm/.cache/cnpm \
 #--disturl=https://npmmirror.com/mirrors/node \
@@ -155,10 +175,11 @@ alias ari="aria2_download"
 #alias cpnpm="pnpm --registry=https://registry.npmmirror.com \
 #--cache=$HOME/.pnpm/.cache/cpnpm"
 #alias pi="cpnpm install"
-
 #alias ni="npm install"
 #alias pi="pnpm install"
 
+
+## alias-git
 github_remote() {
   git remote set-url origin git@github.com:huchase/$1.git;
 }
@@ -169,12 +190,7 @@ github_clone_self() {
 alias gc='github_clone_self'
 
 
-alias gu="google-chrome &"
-alias c="code"
-alias e="nautilus &"
-alias th="touch"
-
-### TMUX
+## alias-tmux
 # https://www.ruanyifeng.com/blog/2019/10/tmux.html
 tmux_new(){
   if [ ! $1 ];then
@@ -197,7 +213,8 @@ alias D="tmux select-pane -D"
 alias L="tmux select-pane -L"
 alias R="tmux select-pane -R"
 
-### Docker
+
+## alias-docker
 alias dl="docker images"
 alias dp="docker ps"
 alias dpa="docker ps -a"
@@ -207,9 +224,8 @@ alias dru="docker run"
 alias ds="docker stop"
 alias dpu="docker pull"
 
-### Do It First
-### Proxy
 
+## alias-proxy
 proxy_on() {
   export all_proxy=socks://127.0.0.1:7891/
   export http_proxy=http://127.0.0.1:7890/
@@ -217,7 +233,6 @@ proxy_on() {
   export https_proxy=http://127.0.0.1:7890/
   gsettings set org.gnome.system.proxy mode 'manual';
 }
-
 proxy_off() {
   unset all_proxy
   unset http_proxy
@@ -225,10 +240,10 @@ proxy_off() {
   unset no_proxy
   gsettings set org.gnome.system.proxy mode 'none';
 }
-
 alias on="proxy_on"
 alias off="proxy_off"
 alias fq="on && cla && off"
+
 
 ### NVM
 export NVM_DIR="$HOME/.nvm"
