@@ -119,8 +119,8 @@ alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
 alias tp='~/apps/typora/Typora'
 alias ai="cat ~/.pwd | sudo -S apt install"
 alias ay="cat ~/.pwd | sudo -S apt install -y"
-alias au="cat ~/.pwd | sudo -S apt update"
-alias ag="cat ~/.pwd | sudo -S apt upgrade"
+alias au="cat ~/.pwd | sudo -S apt update -y"
+alias ag="cat ~/.pwd | sudo -S apt upgrade -y"
 alias as="apt search"
 remove_and_autoremove(){
   sudo apt remove $1;
@@ -135,11 +135,18 @@ alias po="shutdown now"
 alias su="sudo su"
 alias tz="tar zxvf"
 alias cl="clear"
+alias uz="unzip"
+alias py="python3"
+alias rm="rimraf"
 
 alias zcc="vim ~/.zshrc"
 alias vcc="vim ~/.vimrc"
 alias tcc="vim ~/.tmux.conf"
 
+aria2_download() {
+  aria2c -d ~/downloads "$1"
+}
+alias ari="aria2_download"
 #alias cnpm="npm --registry=https://registry.npmmirror.com \
 #--cache=$HOME/.npm/.cache/cnpm \
 #--disturl=https://npmmirror.com/mirrors/node \
