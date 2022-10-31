@@ -41,6 +41,10 @@ alias tp='~/apps/typora/Typora'
 alias g="google-chrome &"
 alias c="code"
 alias e="nautilus . &"
+aria2_download() {
+  aria2c -d ~/downloads $1;
+}
+alias ari="aria2_download"
 
 
 ## alias-dotfile
