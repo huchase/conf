@@ -53,3 +53,4 @@ nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
 nnoremap tc :tabclose<CR>
 nnoremap sa :wq<CR>
+nnoremap qq :q<CR>

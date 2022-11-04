@@ -29,6 +29,8 @@ alias py="python3"
 alias rm="rimraf"
 alias th="touch"
 alias ls="ls -F --color=auto"
+alias jk="cd ~/wp" 
+alias jkb="cd ~/wp/blog/pages/posts" 
 
 
 ## alias-bin
@@ -45,6 +47,7 @@ aria2_download() {
   aria2c -d ~/downloads $1;
 }
 alias ari="aria2_download"
+alias red="redshift -l 28:116"
 
 
 ## alias-dotfile
@@ -80,7 +83,7 @@ github_clone() {
 }
 alias gc='github_clone'
 alias dg='degit'
-
+alias gt='git clone'
 
 ## alias-tmux
 # https://www.ruanyifeng.com/blog/2019/10/tmux.html
