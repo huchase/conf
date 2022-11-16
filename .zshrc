@@ -8,6 +8,7 @@ plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting vscode)
 source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ### util
+alias pg="cd ~/wp/playground && code ."
 ### ALIAS
 ## alias-base
 alias vi="vim"
@@ -27,7 +28,6 @@ alias jkb="cd ~/wp/blog/pages/posts"
 ## alias-bin
 alias cla="cd ~/clash && cat ~/.pwd | sudo -S ./clash -d ."
 alias mc='~/mc/jdk/bin/java -jar ~/mc/HMCL.jar'
-alias tp='~/apps/typora/Typora'
 ## alias-application
 alias g="google-chrome &"
 alias c="code"
